@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@sidebase/nuxt-auth": "^0.6.0-rc.1",
@@ -34,7 +35,6 @@
   },
   "dependencies": {
     "format": "^0.2.2",
-    "mongoose": "^8.0.0",
     "nuxt-server-utils": "^0.0.7"
   }
 }
