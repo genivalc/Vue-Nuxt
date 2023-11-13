@@ -1,7 +1,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['@/assets/css/tailwind.css'],
-  modules: ['@vite-pwa/nuxt', '@nuxtjs/tailwindcss', 'nuxt-server-utils', '@sidebase/nuxt-auth'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  // modules: ['@vite-pwa/nuxt', '@nuxtjs/tailwindcss', 'nuxt-server-utils', '@sidebase/nuxt-auth'],
+  modules: ['@vite-pwa/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
   pwa: {
     manifest: {
       name: 'Nuxt3 PWA testing GEnival',
@@ -40,5 +47,15 @@ export default defineNuxtConfig({
       enabled: true,
       type: 'module',
     },
+  },
+  colorMode: {
+    preference: 'system', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '-mode',
+    storageKey: 'nuxt-color-mode',
   },
 })
