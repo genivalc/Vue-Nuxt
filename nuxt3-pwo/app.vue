@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout :name="layout">
+  <NuxtLayout :name="layout" class="mx-8">
     <VitePwaManifest />
     <NuxtPage />
   </NuxtLayout>

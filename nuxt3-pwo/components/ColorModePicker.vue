@@ -1,17 +1,13 @@
 <template>
-  <div class="min-h-full">
-    <header>
-      <div class="mt-2">
-        <button @click="onClick">
-          <img :src="iconPath" alt="Theme Icon" width="24" height="24" />
-        </button>
-      </div>
-    </header>
-    <main>
-      <slot />
-    </main>
-  </div>
+  <header lass="flex">
+    <div>
+      <button @click="onClick">
+        <img :src="iconPath" alt="Theme Icon" width="24" height="24" />
+      </button>
+    </div>
+  </header>
 </template>
+
 <script setup>
 import sun from '../assets/icons/sun.svg'
 
@@ -24,10 +20,7 @@ const iconPath = computed(() => {
     case 'dark':
       return sun
     default:
-      return (colorMode.preference =
-        colorMode.value === 'light'
-          ? sun
-          : 'https://img.icons8.com/ios-glyphs/90/091a28/moon-symbol.png')
+      return 'https://img.icons8.com/ios-glyphs/90/091a28/moon-symbol.png'
   }
 })
 let colorMode = useColorMode()
@@ -35,7 +28,7 @@ let colorMode = useColorMode()
 console.warn(colorMode.preference)
 </script>
 
-<style>
+<style lang="scss">
 body {
   background-color: #fff;
   color: rgba(0, 0, 0, 0.8);
