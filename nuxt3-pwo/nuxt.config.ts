@@ -8,7 +8,18 @@ export default defineNuxtConfig({
     },
   },
   // modules: ['@vite-pwa/nuxt', '@nuxtjs/tailwindcss', 'nuxt-server-utils', '@sidebase/nuxt-auth'],
-  modules: ['@vite-pwa/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
+  modules: [
+    '@vite-pwa/nuxt',
+    // '@nuxtjs/tailwindcss',
+    // '@nuxtjs/color-mode',
+    '@pinia-plugin-persistedstate/nuxt',
+    '@pinia/nuxt',
+    '@nuxt/ui',
+    // '@nuxt/http',
+  ],
+  pinia: {
+    storesDirs: ['./stores/**'],
+  },
   pwa: {
     manifest: {
       name: 'Nuxt3 PWA testing GEnival',

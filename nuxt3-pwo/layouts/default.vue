@@ -1,51 +1,14 @@
 <template>
-  <div class="min-h-full">
-    <header>
-      <div class="mt-2">
-        <button @click="onClick">
-          <img :src="iconPath" alt="Theme Icon" width="24" height="24" />
-        </button>
-      </div>
-    </header>
-    <main>
-      <slot />
-    </main>
+  <div>
+    <Header></Header>
+    <div>
+      <UContainer class="my-4">
+        <slot></slot>
+      </UContainer>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
-<script setup>
-import sun from '../assets/icons/sun.svg'
+<script setup></script>
 
-const onClick = () => (colorMode.preference = colorMode.value === 'light' ? 'dark' : 'light')
-
-const iconPath = computed(() => {
-  switch (colorMode.value) {
-    case 'light':
-      return 'https://img.icons8.com/ios-glyphs/90/091a28/moon-symbol.png'
-    case 'dark':
-      return sun
-    default:
-      return (colorMode.preference =
-        colorMode.value === 'light'
-          ? sun
-          : 'https://img.icons8.com/ios-glyphs/90/091a28/moon-symbol.png')
-  }
-})
-let colorMode = useColorMode()
-
-console.warn(colorMode.preference)
-</script>
-
-<style>
-body {
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.8);
-}
-.dark-mode body {
-  background-color: #091a28;
-  color: #ebf4f1;
-}
-.sepia-mode body {
-  background-color: #f1e7d0;
-  color: #433422;
-}
-</style>
+<style></style>
