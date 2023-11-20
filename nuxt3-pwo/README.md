@@ -72,7 +72,7 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information .
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 https://www.abibliadigital.com.br/
 https://www.bibliaonline.com.br/acf
 https://ui.nuxt.com/elements/link
